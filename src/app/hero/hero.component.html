@@ -1,0 +1,24 @@
+
+<h1> {{ title}} </h1>
+<p>
+  heroes are here : 
+<!-- </p>
+<div *ngIf="selectedHero">
+    <h2>
+      {{selectedHero.name | uppercase}} is my hero
+    </h2>
+    <button (click)="gotoDetail()">View Details</button>
+ </div> -->
+  
+   <ul class="heroes">
+    <!-- <li>{{heros1.id}} - {{heros1.name}}</li> -->
+    <!-- <li>{{heros11}}</li> -->
+    <!-- <li *ngFor="let hro of heros"> <span class="badge">{{hro.id}}</span> {{hro.name}}</li> -->
+     <li *ngFor="let hro of heros">
+       <a  [routerLink]="['/detail', hro.id]"  class="col-1-4"
+      (click)="onSelect(hro)">
+      <span class="badge">{{hro.id}}</span> {{hro.name}}
+      </a>
+    </li>
+    
+  </ul> 

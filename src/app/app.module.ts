@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 // for routing 
 import { RouterModule } from '@angular/router';
 
+// for hhtp module
+import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 
 import { FormsModule } from '@angular/forms';
@@ -11,7 +13,10 @@ import { HeroDetailsComponent } from './hero-details/hero-details.component';
 import { HeroService } from './hero.service';
 import { HeroComponent } from './hero/hero.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { TmpComponent } from './tmp/tmp.component';
+
+// imports for loading and configuring the in-memory web api;
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
 
 @NgModule({
   declarations: [
@@ -19,11 +24,12 @@ import { TmpComponent } from './tmp/tmp.component';
     HeroDetailsComponent,
     HeroComponent,
     DashboardComponent,
-    TmpComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    HttpModule,
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
     RouterModule.forRoot([
       {
         path: 'hero_link',

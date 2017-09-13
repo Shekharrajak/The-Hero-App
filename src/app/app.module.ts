@@ -17,6 +17,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 // imports for loading and configuring the in-memory web api;
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
+import { HeroSerchComponent } from './hero-serch/hero-serch.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { InMemoryDataService } from './in-memory-data.service';
     HeroDetailsComponent,
     HeroComponent,
     DashboardComponent,
+    HeroSerchComponent,
   ],
   imports: [
     BrowserModule,

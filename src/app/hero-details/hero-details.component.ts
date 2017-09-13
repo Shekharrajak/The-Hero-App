@@ -17,6 +17,7 @@ import { Hero } from '../model';
 
 export class HeroDetailsComponent implements OnInit {
 
+  // h =  new Hero(1111,'great');
   constructor(
     private heroService: HeroService,
     private route: ActivatedRoute,
@@ -28,7 +29,9 @@ export class HeroDetailsComponent implements OnInit {
     this.route.params
       .switchMap((params: Params) => this.heroService.getHero(+params['id']))
       .subscribe(hero => this.hero = hero);
-  }
+  
+    console.log(this.hero.name);
+    }
 
   save(): void{
     this.heroService.update(this.hero)

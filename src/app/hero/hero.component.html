@@ -19,6 +19,15 @@
       (click)="onSelect(hro)">
       <span class="badge">{{hro.id}}</span> {{hro.name}}
       </a>
+      <button class="delete" (click)="delete(hero); $event.stopPropagation()" >X</button>
     </li>
     
-  </ul> 
+  </ul>
+  
+  <div>
+    <label>Hero to add :</label>
+    <input #heroName/>
+    <button (click)="add(heroName.value); heroName.value=''">
+      add
+    </button>
+  </div>

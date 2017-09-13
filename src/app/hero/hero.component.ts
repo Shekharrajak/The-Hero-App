@@ -21,10 +21,10 @@ export class HeroComponent implements OnInit {
 
   // }
     heros: Hero[];// = [{id: 12, name: 'sjhekhar'}];
-    // selectedHero: Hero;
-    // onSelect(her: Hero): void{
-    //   this.selectedHero = her;
-    // }
+     selectedHero: Hero;
+    //  onSelect(her: Hero): void{
+    //    this.selectedHero = her;
+    //  }
 
     getHeroes(): void{
       // this.heros = this.heroService.getHeroes();
@@ -32,6 +32,27 @@ export class HeroComponent implements OnInit {
       // this.heros: Hero[] = [{id: 12, name: 'shekhar'}]
     }
 
+    // add new hero
+    add(name: string):void{
+      name  = name.trim();
+      if(!name){
+        return ;
+      }
+      this.heroService.create(name)
+        .then(hero =>{
+          this.heros.push(hero)
+        })
+    }
+
+    delete(hero: Hero): void{
+      this.heroService
+        .delete(hero.id)
+        .then(() => {
+          this.heros= this.heros.filter(h => h.id !== hero.id);
+          if(this.selectedHero == hero){this.selectedHero = null;}
+        })
+
+    }
     ngOnInit(): void {
       this.getHeroes();
     }

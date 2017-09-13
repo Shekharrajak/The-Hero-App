@@ -11,7 +11,6 @@ import { HeroDetailsComponent } from './hero-details/hero-details.component';
 import { HeroService } from './hero.service';
 import { HeroComponent } from './hero/hero.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { TmpComponent } from './tmp/tmp.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +18,7 @@ import { TmpComponent } from './tmp/tmp.component';
     HeroDetailsComponent,
     HeroComponent,
     DashboardComponent,
-    TmpComponent,
+    
   ],
   imports: [
     BrowserModule,
